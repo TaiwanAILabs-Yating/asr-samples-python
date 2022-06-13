@@ -11,6 +11,6 @@ stream_file(
   key='your-key-from-devconsole',
   pipeline='asr-zh-tw-std', # asr-zh-en-std, asr-zh-tw-std, asr-en-std or asr-jp-std
   input_wav='your-voice-file.wav',
-  # config_path='api.yaml',
+  config_path='api.yaml',
   verbose=False
 )
