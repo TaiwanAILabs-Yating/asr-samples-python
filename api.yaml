@@ -1,0 +1,8 @@
+WebSocket:
+  URL: wss://asr-api.staging.yating.tw/ws/v1/
+
+RESTfulAPI:
+  URL: https://asr-api.staging.yating.tw/v1/docs
+
+TokenAPI:
+  URL: https://asr-api.staging.yating.tw/v1/token
