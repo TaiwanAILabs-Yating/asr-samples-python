@@ -1,1 +1,1 @@
-ailabs_asr==0.0.8
+ailabs_asr==0.0.9

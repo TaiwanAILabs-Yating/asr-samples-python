@@ -15,3 +15,5 @@ pip install --global-option='build_ext' --global-option='-I/usr/local/include' -
 # please check PyAudio site: https://people.csail.mit.edu/hubert/pyaudio/
 # if you encouter some issues while installing PyAudio
 ```
+
+see the detail document in [the SDK repository page](https://github.com/TaiwanAILabs-Yating/asr-sdk-python)

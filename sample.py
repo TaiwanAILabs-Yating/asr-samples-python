@@ -1,16 +1,17 @@
-from distutils.command.config import config
-from pathlib import Path
-import sys
-path_root = Path(__file__).parents[1]
-# be aware of the path may be different from our developers and it could cause some error
-sys.path.append(str(path_root))
+from ailabs_asr.streaming import StreamingClient
 
-from ailabs_asr.streaming import stream_file
+def on_processing_sentence(message):
+  print(f'hello: {message["asr_sentence"]}')
 
-stream_file(
-  key='your-key-from-devconsole',
-  pipeline='asr-zh-tw-std', # asr-zh-en-std, asr-zh-tw-std, asr-en-std or asr-jp-std
-  input_wav='your-voice-file.wav',
+def on_final_sentence(message):
+  print(f'world: {message["asr_sentence"]}')
+  
+asr_client = StreamingClient(
   config_path='api.yaml',
-  verbose=False
-)
+  key='key-applied-from-devconsole')
+asr_client.start_streaming_wav(
+  pipeline='asr-zh-tw-std',
+  # verbose=True,
+  file='your-voice-file.wav',
+  on_processing_sentence=on_processing_sentence,
+  on_final_sentence=on_final_sentence)
