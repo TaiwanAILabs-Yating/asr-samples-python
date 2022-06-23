@@ -14,6 +14,6 @@ asr_client = StreamingClient(
 asr_client.start_streaming_wav(
   pipeline='asr-zh-tw-std',
   # verbose=True,
-  file='your-voice-file.wav',
+  file='your-voice-file.wav', #remove 'file' to switch to streaming mode. 
   on_processing_sentence=on_processing_sentence,
   on_final_sentence=on_final_sentence)
