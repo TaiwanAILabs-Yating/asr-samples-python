@@ -5,10 +5,12 @@ def on_processing_sentence(message):
 
 def on_final_sentence(message):
   print(f'world: {message["asr_sentence"]}')
-  
+
+ # initial Stream client with the key applied from Dev Console
 asr_client = StreamingClient(
-  config_path='api.yaml',
   key='key-applied-from-devconsole')
+
+# start Streaming with a wav file
 asr_client.start_streaming_wav(
   pipeline='asr-zh-tw-std',
   # verbose=True,
